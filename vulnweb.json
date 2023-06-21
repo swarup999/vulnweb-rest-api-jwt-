@@ -1,0 +1,707 @@
+{
+	"info": {
+		"_postman_id": "48a7b3ce-8ba3-4431-89a9-75c204eeb307",
+		"name": "rest.vulnweb.com (JSON Web Token)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25413128"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"value": "rest.vulnweb.com",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://rest.vulnweb.com/jwt/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new user JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"test3\",\r\n  \"email\": \"test3@test.com\",\r\n  \"password\": \"123456\",\r\n  \"first_name\": \"test3\",\r\n  \"last_name\": \"user\"\r\n}"
+						},
+						"url": "http://rest.vulnweb.com/jwt/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Get user JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/users/:username",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "test3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user posts JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/users/:username/posts",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"users",
+								":username",
+								"posts"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "test3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user JSON",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"test3\",\r\n  \"email\": \"test_user@example22.com\",\r\n  \"password\": \"123456\",\r\n  \"first_name\": \"test22\",\r\n  \"last_name\": \"user22\"\r\n}"
+						},
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/users/:username",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "test3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user JSON",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/users/:username?callback=test",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"users",
+								":username"
+							],
+							"query": [
+								{
+									"key": "callback",
+									"value": "test"
+								}
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "test_username"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Get all posts JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": "http://rest.vulnweb.com/jwt/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new post JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"1454048\",\r\n  \"title\": \"Test Rest API Collection\",\r\n  \"content\": \"Find the vulnerable rest api for testing purpose\"\r\n}"
+						},
+						"url": "http://rest.vulnweb.com/jwt/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get post JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/posts/:postId",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"posts",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "630025"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post comments JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/posts/:commentId/comments",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"posts",
+								":commentId",
+								"comments"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit post JSON",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"34\",\r\n  \"title\": \"test post title22\",\r\n  \"content\": \"test content22\"\r\n}"
+						},
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/posts/:postId",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"posts",
+								":postId"
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post JSON",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/xml"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/posts/:postId?callback=test",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"posts",
+								":postId"
+							],
+							"query": [
+								{
+									"key": "callback",
+									"value": "test"
+								}
+							],
+							"variable": [
+								{
+									"key": "postId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Get all comments JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": "http://rest.vulnweb.com/jwt/api/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Add new comment JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"1454048\",\r\n  \"post_id\": \"630024\",\r\n  \"comment\": \"Wow, this is so good\"\r\n}"
+						},
+						"url": "http://rest.vulnweb.com/jwt/api/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/comments/:commentId",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"comments",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "344743"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit comment JSON",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user_id\": \"1454048\",\r\n  \"post_id\": \"630025\",\r\n  \"comment\": \"test comment11\"\r\n}"
+						},
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/comments/:commentId",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"comments",
+								":commentId"
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "344743"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment JSON",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Host",
+								"type": "text",
+								"value": "rest.vulnweb.com"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://rest.vulnweb.com/jwt/api/comments/:commentId?callback=test",
+							"protocol": "http",
+							"host": [
+								"rest",
+								"vulnweb",
+								"com"
+							],
+							"path": [
+								"jwt",
+								"api",
+								"comments",
+								":commentId"
+							],
+							"query": [
+								{
+									"key": "callback",
+									"value": "test"
+								}
+							],
+							"variable": [
+								{
+									"key": "commentId",
+									"value": "101"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test root path",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Host",
+						"value": "rest.vulnweb.com",
+						"type": "text"
+					}
+				],
+				"url": "http://rest.vulnweb.com/jwt/api/"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.e30.optJqUcSW5s7UZ1bBh7MBTH6QNTCOIIfLYXJ8u2JwsI"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "test3",
+			"type": "string"
+		}
+	]
+}
